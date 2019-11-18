@@ -28,9 +28,6 @@
                     font-size: 3.5rem;
                 }
             }
-            ul li {
-                list-style: none;
-            }
         </style>
         <!-- Custom styles for this template -->
         <link href="css/starter-template.css" rel="stylesheet" />
@@ -89,22 +86,27 @@
 
                         <h5>Sessões</h5><br/>
 
-
-                        <ul id="sessoes">
-                            <li id="top1">
-                                <div class="form-group">
-                                    <input autofocus type="text" class="form-control" id="t1" name="t1" placeholder="Informe o título da sessão" />              
-                                </div>
-                                <div class="form-group">
-                                    <textarea placeholder="Conteúdo da sessão" id="c1" name="c1" class="form-control"></textarea>
-                                </div>
-                                <button class="btn btn-default" onclick="criarSubtopico('top1');">Adicionar sub-tópico</button>
+                        <div id="sessaoModelo" hidden>
+                            <div class="corpoSessao">
                                 <hr/>
-                            </li>
-                        </ul>
+                                <div class="form-group">
+                                    <label for="titulo">Título</label>
+                                    <input autofocus type="text" class="form-control" id="tituloSessao[]" name="tituloSessao[]" placeholder="Informe o título da sessão" />              
+                                </div>
 
+                                <div class="form-group">
+                                    <label for="titulo">Conteúdo</label>
+                                    <textarea placeholder="Conteúdo da sessão" id="conteudo[]" name="conteudo[]" class="form-control"></textarea>
+                                </div>
+                            </div>
 
-                        <br/><button type="button" class="btn btn-warning" onclick="criarTopicoPrincipal();">Adicionar tópico principal</button>
+                            <div class="topicos" id="subTopicos"></div>
+
+                        </div>
+
+                        <div id="sessoes"></div>
+
+                        <br/><button type="button" class="btn btn-warning" onclick="criarTopico();">Adicionar Tópico</button>
 
                         <br/><br/><button type="submit" class="btn btn-primary">Salvar</button>
                     </form>
