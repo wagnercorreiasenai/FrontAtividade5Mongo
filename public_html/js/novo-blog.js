@@ -3,11 +3,9 @@ function enviarBlog() {
     var dados = {
         "nome": $('#nome').val(),
         "descricao": $('#descricao').val(),
-        "usuario": {
-            "nome": $('#nomeUsuario').val(),
-            "login": $('#login').val(),
-            "senha": $('#senha').val()
-        }
+        "nome_usuario": $('#nomeUsuario').val(),
+        "login": $('#login').val(),
+        "senha": $('#senha').val()
     };
 
     $.ajax({
