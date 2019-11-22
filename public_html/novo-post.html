@@ -31,6 +31,9 @@
             ul li {
                 list-style: none;
             }
+            .btnSub {
+                margin-bottom: 10px;
+            }
         </style>
         <!-- Custom styles for this template -->
         <link href="css/starter-template.css" rel="stylesheet" />
@@ -49,10 +52,10 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Todos os blogs</a>
-                    </li><li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="meu-blog.html">Meu blog</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="novo-post.html">Novo post</a>
                     </li>
@@ -67,7 +70,7 @@
                 <div class="col-md-12">
                     <h2>Novo post</h2>
 
-                    <form>
+                    <form id="formPost" name="formPost" method="post" action="" onsubmit="return enviarPost();">
 
                         <div class="form-group">
                             <label for="titulo">Título do post</label>
@@ -89,7 +92,6 @@
 
                         <h5>Sessões</h5><br/>
 
-
                         <ul id="sessoes">
                             <li id="top1">
                                 <div class="form-group">
@@ -98,7 +100,10 @@
                                 <div class="form-group">
                                     <textarea placeholder="Conteúdo da sessão" id="c1" name="c1" class="form-control"></textarea>
                                 </div>
-                                <button class="btn btn-default" onclick="criarSubtopico('top1');">Adicionar sub-tópico</button>
+                                <button class="btnSub" type="button" class="btn btn-default" onclick="criarSubtopico('top1');">Adicionar sub-tópico</button>
+
+                                <ul id="subtop1"></ul>
+
                                 <hr/>
                             </li>
                         </ul>
@@ -107,6 +112,9 @@
                         <br/><button type="button" class="btn btn-warning" onclick="criarTopicoPrincipal();">Adicionar tópico principal</button>
 
                         <br/><br/><button type="submit" class="btn btn-primary">Salvar</button>
+
+                        <br/><br/>
+
                     </form>
 
                 </div>
@@ -115,12 +123,13 @@
         </main><!-- /.container -->
 
         <!-- JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="lib/bootstrap-4.3.1-dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
         <!-- JS criados -->
         <script src="js/novo-post.js" type="text/javascript"></script>
+        <script src="js/gets.js" type="text/javascript"></script>
 
     </body>
 </html>
