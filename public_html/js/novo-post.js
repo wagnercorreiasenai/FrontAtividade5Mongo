@@ -51,7 +51,7 @@ function criarSubtopico(codses) {
 function enviarPost() {
 
     var dados = {
-        "id_blog": "5dc6b5d27fa88f14908bf08e",
+        "id_blog": $('#id_blog').val(),
         "titulo_post": $('#titulo').val(),
         "data_post": "" + $('#data').val() + "T" + $('#hora').val() + ":00.201-03:00",
         "sessao_blog": [
@@ -79,7 +79,7 @@ function enviarPost() {
         dataType: 'json',
         success: function (msg) {
             alert("Post criado com sucesso !");
-            location.href = 'meu-blog.html';
+            location.href = 'index.html';
         }
     });
 
@@ -87,6 +87,29 @@ function enviarPost() {
 
 }
 
+function listarBlogs() {
+
+    $.ajax({
+        url: 'http://localhost:8000/api/blog',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+
+            blogs = data.docs;
+
+            conteudo = '';
+            for (i = 0; i < blogs.length; i++) {
+                conteudo = conteudo + '<option value="'+blogs[i]._id+'">'+blogs[i].nome+'</value>';
+            }
+
+            $('#id_blog').html(conteudo);
+
+        }
+    });
+
+}
+
 window.onload = function () {
+    listarBlogs();
     setarDataPublicacao();
 };

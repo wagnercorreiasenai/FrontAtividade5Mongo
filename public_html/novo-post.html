@@ -54,9 +54,6 @@
                         <a class="nav-link" href="index.html">Todos os blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="meu-blog.html">Meu blog</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="novo-post.html">Novo post</a>
                     </li>
                     
@@ -76,6 +73,13 @@
 
                     <form id="formPost" name="formPost" method="post" action="" onsubmit="return enviarPost();">
 
+                        <div class="form-group">
+                            <label for="titulo">Selecione o blog</label>
+                            <select class="form-control" id="id_blog" name="id_blog">
+                                
+                            </select>
+                        </div>
+                        
                         <div class="form-group">
                             <label for="titulo">Título do post</label>
                             <input autofocus type="text" class="form-control" id="titulo" name="titulo" placeholder="Informe o título do post" />

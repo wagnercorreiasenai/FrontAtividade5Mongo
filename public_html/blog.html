@@ -33,13 +33,18 @@
         <link href="css/starter-template.css" rel="stylesheet" />
 
         <script>
-            
+
             window.onload = function () {
-              todosBlogs();  
+                //Lista todos os posts
+                getPosts(sessionStorage._id);
+
+                //Dados do blog
+                $('#titulo').html(sessionStorage.nome);
+                $('#descricao').html(sessionStorage.descricao);
             };
-            
+
         </script>
-        
+
     </head>
 
     <body>
@@ -70,7 +75,37 @@
 
         <main role="main" class="container">
 
-            <div class="row" id="blogs"></div>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <h3>Título do Blog: <span style="font-weight: 800" id="titulo"></span></h3>
+                    <p style="font-style: italic;color: #ccc;" id="descricao"></p>
+                    <hr/><br/><br/>
+                </div>
+
+                <div id="posts">
+
+                    <div class="col-md-12">
+                        <h2>Blog de teste</h2>
+                        <p>descricão do blog</p>
+                        <hr/><br/>
+                    </div>
+
+                    <div class="col-md-12">
+                        <h2>Blog de teste</h2>
+                        <p>descricão do blog</p>
+                        <hr/><br/>
+                    </div>
+
+                    <div class="col-md-12">
+                        <h2>Blog de teste</h2>
+                        <p>descricão do blog</p>
+                        <hr/><br/>
+                    </div>
+
+                </div>
+
+            </div>
 
         </main><!-- /.container -->
 
